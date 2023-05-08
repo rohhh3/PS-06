@@ -1,0 +1,14 @@
+﻿@page
+@model FizzBuzzWeb.Pages.SavedInSessionModel
+@{
+    ViewData["Title"] = "Data in session";
+}
+<p>Dane w zapisane w sesji</p>
+<p>
+    <ul>
+        @foreach (var obiekt in Model.FizzBuzzSession.SessionList)
+        {
+            <li>@obiekt.Name, @obiekt.Year - @obiekt.Information</li>
+        }
+    </ul>
+</p>
