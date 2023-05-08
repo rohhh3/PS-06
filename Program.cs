@@ -13,6 +13,9 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<WyszukiwaniaContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("DrugaBaza")));
+
 builder.Services.AddMemoryCache();
 
 builder.Services.Configure<IdentityOptions>(options =>
